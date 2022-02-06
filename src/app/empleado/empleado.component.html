@@ -1,0 +1,71 @@
+<p>Nombre: {{ cuadronombre.value }}</p>
+<p>
+  Introduce el nombre:
+  <input
+    type="text"
+    #cuadronombre
+    placeholder="Introduce nombre"
+    (keyup)="(0)"
+    [disabled]="deshabilitacionCuadro"
+  />
+</p>
+<p>
+  Edad: {{ Edad }}
+  <input
+    type="button"
+    value="+"
+    (click)="Sumar()"
+    [disabled]="deshabilitacionCuadro"
+  />
+  <input
+    type="button"
+    value="-"
+    (click)="Restar()"
+    [disabled]="deshabilitacionCuadro"
+  />
+</p>
+
+<p>Empresa: {{ Empresa }}</p>
+
+Introduce la empresa:
+<input
+  type="text"
+  [(ngModel)] = "Empresa"
+>
+
+
+<!--Introduce la empresa:
+<input
+  type="text"
+  #cuadroempresa
+  placeholder="Introduce Empresa"
+  (keyup)="(0)"
+  [disabled]="deshabilitacionCuadro"
+/> -->
+<br />
+<br />
+{{ textoDeRegistro }}
+<br />
+Registrado:
+<input
+  type="radio"
+  value="si"
+  name="nRegistro"
+  #registro
+  [checked]="userRegistrado" 
+  (click)="cambiarStatus($event)"
+/>
+No Registrado: 
+<input
+  type="radio"
+  value="no"
+  name="nRegistro"
+  (click)="cambiarStatus($event)"
+/>
+
+<!--{{ getRegistroUsuario() }}-->
+
+<p>
+  Tiene
+  {{ Edad < 18 ? Edad + " es Menor de edad" : Edad + " es Mayor de Edad" }}
+</p>
